@@ -1,0 +1,282 @@
+{
+  "title": "Pachmarhi Group trip",
+  "imgurl": [
+    {
+      "imgurl1": "/images/home-bg-1.jpg",
+      "imgurl2": "/images/home-bg-1.jpg",
+      "imgurl3": "/images/home-bg-1.jpg",
+      "imgurl4": "/images/home-bg-1.jpg"
+    }
+  ],
+  "brief": "maaz tussi great hooEmbark on an enchanting group trip to Pachmarhi, lovingly known as The \"Queen of Satpura\", with Travel Tech as your trusted companion. This picturesque destination, nestled within the Satpura Range in central India, promises a breathtaking journey through lush forests, serene waterfalls, and awe-inspiring viewpoints. We take care of all the details, ensuring a seamless and enjoyable experience for you and your fellow travellers. The adventure begins with a lively pool party with DJ at our resort, setting the tone for relaxation and camaraderie. A gypsy safari into the wilds of Satpura offers thrilling encounters with diverse wildlife and the region's natural beauty. As the sun sets, our music night under the starlit sky provides the perfect backdrop for dancing, live performances of group members, group games, and creating cherished memories. Throughout your stay, you'll have the chance to partake in a variety of activities, from nature walks to sightseeing excursions, visiting iconic spots like Bee Fall, Dhoopgarh, Jata Shankar, and the beautiful trek of Chouragarh Mahadev. Let us lead you on this captivating journey to Pachmarhi, where The \"Queen of Satpura\" is ready to steal your heart, and you can focus on making unforgettable memories.",
+  "duration": "3N-4D",
+  "note": "<h1>Pool party and <strong>Gypsy</strong> will be subject to availability</h1>.",
+  "off": "",
+  "Photos":"This is for link",
+  "Quadprice": 4999,
+  "Tripleprice": 500,
+  "Doubleprice": 1500,
+  "Batches": [
+    {
+      "id": 1,
+      "date": "08-Feb To 12-Feb",
+      "Extraprice": 1000
+    },
+    {
+      "id": 2,
+      "date": "15-Feb To 19-Feb",
+      "Extraprice": 2000
+    },
+    {
+      "id": 3,
+      "date": "15-Feb To 19-Feb",
+      "Extraprice": 2000
+    },
+    {
+      "id": 4,
+      "date": "15-Feb To 19-Feb",
+      "Extraprice": 2000
+    },
+    {
+      "id": 5,
+      "date": "15-Feb To 19-Feb",
+      "Extraprice": 2000
+    }
+  ],
+  "Picuppoint": [{
+    "location": "Astha",
+    "Extraprice": 100,
+    "Time": "12AM"
+  },{
+    "location": "Pipariya",
+    "Extraprice": 0,
+    "Time": "12AM"
+  },
+    {
+      "location": "Indore",
+      "Extraprice": 0,
+      "Time": "12AM"
+    },
+    {
+      "location": "Dewas",
+      "Extraprice": 100,
+      "Time": "1AM"
+    },
+    {
+      "location": "Bhopal",
+      "Extraprice": 200,
+      "Time": "32AM"
+    }
+  ],
+  "Droppoint": [
+    {
+      "location": "Indore",
+      "Extraprice": 0,
+      "Time": "12AM"
+    },
+    {
+      "location": "Pipariya",
+      "Extraprice": 0,
+      "Time": "1AM"
+    },
+    {
+      "location": "Bhopal",
+      "Extraprice": 100,
+      "Time": "32AM"
+    },
+    {
+      "location": "Dewas",
+      "Extraprice": 100,
+      "Time": "32AM"
+    },
+    {
+      "location": "Ashta",
+      "Extraprice": 100,
+      "Time": "32AM"
+    }
+  ],
+  "it": [
+    {
+      "Heading": "Departure from Indore",
+      "Schedule": "<ul class='list-disc pl-5'> <li>The group will&nbsp;<strong>assemble</strong>&nbsp;at the pickup point at&nbsp;<strong>06:00 AM</strong>.</li> <li>Upon reaching&nbsp;<strong>Joshimath</strong>, we will check into our designated homestays. The rest of the day is at leisure.</li> <li>Dinner will be served in the evening followed by an overnight stay.</li> </ul> <p class='mt-2'><strong>Pickup Point -</strong>&nbsp;Natraj Chowk/Tapovan Chowk</p> <p><strong>Timing -</strong>&nbsp;6:30 AM (Tentative)</p> <p>&nbsp;</p>"
+        
+    },
+    {
+      "Heading": "Panchmarhi sightseening",
+      "Schedule": "<ul class='list-disc pl-5'> <li>The group will&nbsp;<strong>assemble</strong>&nbsp;at the pickup point at&nbsp;<strong>06:00 AM</strong>.</li> <li>Upon reaching&nbsp;<strong>Joshimath</strong>, we will check into our designated homestays. The rest of the day is at leisure.</li> <li>Dinner will be served in the evening followed by an overnight stay.</li> </ul> <p class='mt-2'><strong>Pickup Point -</strong>&nbsp;Natraj Chowk/Tapovan Chowk</p> <p><strong>Timing -</strong>&nbsp;6:30 AM (Tentative)</p> <p>&nbsp;</p>"
+        
+    },
+    {
+      "Heading": "Gypsy and other sightseeing ",
+      "Schedule": "<ul class='list-disc pl-5'> <li>The group will&nbsp;<strong>assemble</strong>&nbsp;at the pickup point at&nbsp;<strong>06:00 AM</strong>.</li> <li>Upon reaching&nbsp;<strong>Joshimath</strong>, we will check into our designated homestays. The rest of the day is at leisure.</li> <li>Dinner will be served in the evening followed by an overnight stay.</li> </ul> <p class='mt-2'><strong>Pickup Point -</strong>&nbsp;Natraj Chowk/Tapovan Chowk</p> <p><strong>Timing -</strong>&nbsp;6:30 AM (Tentative)</p> <p>&nbsp;</p>"
+        
+    }
+    
+  ],
+  "inclusion": [
+    {
+      "name": "Trip Captain",
+      "icon": "Trip_Captain",
+      "inc": "Experienced Trip Captain (Only IF 12+ Members In A group)"
+    },
+    {
+      "name": "Accommodation",
+      "icon": "Accommodation",
+      "inc": "1 Night stay Accommodation 3 star Resort/Hotel With 2 Overnight journey"
+    },
+    {
+      "name": "Meals",
+      "icon": "Meals",
+      "inc": "A total of 4 meals (2 breakfasts and 2 dinners). Kindly note, considering the remoteness of the place, the supply of breakfast and dinner might have limited varieties."
+    },
+    {
+      "name": "Gypsy",
+      "icon": "Gypsy",
+      "inc": "Gypsy Safari (1 Day) Along will all Forest Charges, guide charges & Entry tickets"
+    },
+    {
+      "name": "Traveler",
+      "icon": "Traveler",
+      "inc": "Everyday commute by a Non AC tempo traveler/Sedan/SUV. All inner line permits for the trip; driver night charges, toll tax, parking charges."
+    }
+  ],
+  "exclusion": [
+    {
+      "name": "Expenses",
+      "icon": "Personal_Expenses",
+      "inc": "Any personal expenses."
+    },
+    {
+      "name": "Transport",
+      "icon": "Transport",
+      "inc": "Local vehicle charges may apply if unforeseen circumstances arise due to heavy crowd or if gypsy vehicles are sold out."
+    },
+    {
+      "name": "Meals",
+      "icon": "Meals",
+      "inc": "Any kind of food items or beverages that are not included in the package, like alcoholic drinks, mineral water, refreshments/lunches on the highway."
+    },
+    {
+      "name": "Priority High",
+      "icon": "Priority_High",
+      "inc": "Anything not mentioned in the inclusion."
+    },
+    {
+      "name": "Tax",
+      "icon": "Tax",
+      "inc": "5% Tax"
+    },
+    {
+      "name": "Personal Expenses",
+      "icon": "Personal_Expenses",
+      "inc": "Any personal expenses."
+    },
+    {
+      "name": "Natural Calamities",
+      "icon": "Natural_Calamities",
+      "inc": "Any cost arising due to natural calamities."
+    }
+  ],
+  "thingstotake": [
+    {
+      "name": "Shoes",
+      "icon": "Shoes",
+      "inc": "A good pair of hiking shoes."
+    },
+    {
+      "name": "Moisturizer",
+      "icon": "Moisturizer",
+      "inc": "Sunscreen or moisturizer, personal meds, and toiletries."
+    },
+    {
+      "name": "Hiking",
+      "icon": "hiking",
+      "inc": "Raincoat, swimming Costume and jackets."
+    },
+    {
+      "name": "Umbrella",
+      "icon": "Umbrella",
+      "inc": "Caps/hats and a pair of sunglasses, towel, water bottle, and thermos flask, and an umbrella."
+    },
+    {
+      "name": "Essentials",
+      "icon": "Essentials",
+      "inc": "Power bank/Charger, camera, torch, selfie stick."
+    },
+    {
+      "name": "First Aid Kit",
+      "icon": "First_Aid_Kit",
+      "inc": "First Aid Kit, mask, and sanitizer."
+    },
+    {
+      "name": "Reusable Water bottle",
+      "icon": "Reusable_Water_bottle",
+      "inc": "Stay hydrated during your trek by carrying a reusable water bottle. Consider a bottle with a built-in filter if you are unsure about the water quality at your destination."
+    },
+    {
+      "name": "Spare Plastic Bags",
+      "icon": "Spare_Plastic_Bags",
+      "inc": "Useful for separating dirty or wet clothes from the rest of your belongings."
+    }
+  ],
+  "gentem": "NUll" 
+  ,
+  "Booking": [
+    {
+      "key": "Booking Policy",
+      "description": "<ul class='list-disc pl-8'> <li>Book your seats by depositing an advance of 50% per head to the below account and the rest has to be paid 1 day prior to the time of departure of the trip.</li> <li>Send Payment screenshot on the below numbers. And fill out the form which will be provided by us. Then booking will confirm accordingly.</li> <li>If you want to book any specific seat in the traveler then you have to pay <strong>Rs.300/-</strong> extra amount for booking specific seat number, (seats will be provided subject to availability basis)/ First come first basis.</li> </ul>"
+    } ,
+    {
+      "key": "Cancellation Policy",
+      "description": "<ul class='list-disc pl-8'> <li>If cancellations are made 60-30 days before the trip's start date, 10% of the total tour cost will be charged as cancellation fees.</li> <li>If cancellations are made 30 days before the trip's start date, 50% of the total tour cost will be charged as cancellation fees.</li> <li>If cancellations are made within 0-30 days before the trip's start date, 100% of the total tour cost will be charged as cancellation fees.</li><li>In case of unforeseen weather conditions or government restrictions, certain activities may be canceled, and in such cases, the operator will try his best to provide an alternate feasible activity. However, no refund will be provided for the same.</li> </ul>"
+    }   
+  ],
+  "Cancellation": [
+    {
+      "key": "cancellationPolicy60to30Days",
+      "description": ""
+    },
+    {
+      "key": "cancellationPolicy30Days",
+      "description": ""
+    },
+    {
+      "key": "cancellationPolicy0to30Days",
+      "description": ""
+    },
+    {
+      "key": "activityCancellationDueToUnforeseenConditions",
+      "description": ""
+    }
+  ],
+  "FAQ": [
+    {
+      "question": "By when can I book this trip?",
+      "answer": "You can reserve your spot for this trip up to 3 days before the start date. Seats are limited and allocated on a first-come, first-served basis, so make sure to secure your booking early to avoid disappointment."
+    },
+    {
+      "question": "Are there any other batches happening in the future?",
+      "answer": "Stay informed about our latest adventures! Stay connected with us on Instagram, browse our website, or delve into our WhatsApp catalog for the latest trip announcements and schedules."
+    },
+    {
+      "question": "What is the booking process for the trip, and how many seats are left?",
+      "answer": "In just a few clicks, you can save your spot. All you have to do is DM us on WhatsApp, fill out a form, and pay 50% of the amount along with your government-issued valid ID cards to book a seat."
+    },
+    {
+      "question": "What is the gender ratio expected for this trip, and is it safe for solo female travelers?",
+      "answer": "Typically, our tours maintain a gender distribution ratio of 40:60. Ensuring the safety of all participants, our trips are designed to be secure and welcoming for solo female travelers."
+    },
+    {
+      "question": "What is the age group for this trip?",
+      "answer": "We strongly encourage individuals aged 18-35 years to participate in our trips.."
+    },
+    {
+      "question": "How can I get in touch with the people who have already booked the trip?",
+      "answer": "Prior to the day of the trip, we will establish a WhatsApp group that will include all travelers, trip curators, and your Trip Captain."
+    },
+    {
+      "question": "Can the trip be customised?",
+      "answer": "Yes this itinarary can be customise but Cost maybe Vary, Just Drop Hello with your Queries At our Whatsapp"
+    }
+  ]
+}

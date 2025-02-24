@@ -3,8 +3,22 @@
 @tailwind utilities;
 
 :root {
+  
   --background: #ffffff;
   --foreground: #171717;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +29,72 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: ui-sans-serif, system-ui, sans-serif, 
+               "Apple Color Emoji", "Segoe UI Emoji", 
+               "Segoe UI Symbol", "Noto Color Emoji";
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.icon-scroll {
+  width: 24px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 12px;
+  position: relative;
+}
+
+.icon-scroll::before {
+  content: "";
+  width: 4px;
+  height: 8px;
+  background: rgb(231, 196, 196);
+  border-radius: 1px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+.btn-tab-active:after {
+  content: var(--tw-content);
+  opacity: 1;
+}
+
+.btn-tab:after {
+  position: absolute;
+  bottom: -.125rem;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 102 217 / var(--tw-bg-opacity));
+  opacity: 0;
+  --tw-content: "";
+  content: var(--tw-content);
+}
+
+@keyframes fadeInIcon {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.icon-transition {
+  animation: fadeInIcon 0.2s ease-in-out;
 }

@@ -1,0 +1,103 @@
+.SnjhR {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1vw;
+    z-index: -1;
+    background: linear-gradient(to right, rgb(213, 213, 213) 0%, rgb(241, 241, 241) 20%, rgb(213, 213, 213) 40%, rgb(213, 213, 213) 100%) center center / cover no-repeat rgb(213, 213, 213);
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+  }
+  .iuvGsx {
+    position: absolute !important;
+    top: 0px;
+    right: 0px;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform: matrix(1, 0.04, -0.04, 1, 0, 0) !important;
+    border-radius: 1vw !important;
+    z-index: -10;
+    background: linear-gradient(rgb(99, 212, 5) 0%, rgb(15, 163, 248) 100%) !important;
+  }
+  .cAnrOf {
+    position: absolute;
+    bottom: 1vw;
+    left: 1.5vw;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .fxsTJR {
+    cursor: pointer;
+    width: 18.08vw;
+    height: 21.96vw;
+    position: relative;
+  
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 16px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .kwYMGm {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+   
+  }
+  
+  .iNvskg {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1.83vw;
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
+  }
+  .jCihag {
+    padding: 30px 10% 0px;
+   
+  }
+  @media screen and (max-width: 600px){
+    .fxsTJR {
+      width: 43.84vw;
+      height: 57.95vw;
+     
+  }
+  .fsssm {
+    width: 43.84vw;
+    height: 57.95vw;
+    margin-right: 16px;
+  }
+    .fdSjRR {
+      width: 20vw;
+  }
+  .jCihag {
+    margin-top: 22px;
+    padding: 0px 6%;
+  }
+  .iNvskg {
+    gap: 11px 10px;
+    grid-template-columns: repeat(2, 44vw);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
+  }
+  }
+
+  .imgstyle{
+    background: url('/images/staticimg/person logo.jpg');
+    background-position: "center center";
+    background-repeat: "no-repeat";
+    background-size: "cover";
+  }

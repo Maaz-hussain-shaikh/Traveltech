@@ -24,9 +24,7 @@ interface TripProps {
             <Thingstoknow inclution={data.inclusion} thingsToTake={data.thingstotake} exclution={data.exclusion} />
             
             <Faq Booking={data.Booking} Faq={data.FAQ}/>
-            {/* Things to Know */}
-            {/* Policies Section */}
-            {/* FAQs Section */}
+           
           </div>
           {/*  mobile Section */}
           <Pricedetails Quadprice={data.Quadprice} Doubleprice={data.Doubleprice} Tripleprice={data.Tripleprice} Batchdata={data.Batches} Drop={data.Droppoint} Pickup={data.Picuppoint}/>

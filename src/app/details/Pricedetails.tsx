@@ -275,9 +275,9 @@ const [showEndDropdown, setShowEndDropdown] = useState(false);
 
             <hr />
             <div className="scrollbar-styled max-h-[150px] overflow-auto">
-              {Batchdata.map((batch) => (
+              {Batchdata.map((batch,index) => (
                 <div
-                  key={batch.id}
+                  key={index}
                   className="" onClick={()=>{handleSelectBatch(batch.date,batch.id,batch.Extraprice)}}
                 >
                   <div className="hidden rounded-lg mb-2 bg-blue-100 px-4 py-[0.375rem] text-sm lg:block">

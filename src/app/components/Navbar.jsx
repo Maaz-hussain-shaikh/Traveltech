@@ -45,15 +45,13 @@ const Navbar = () => {
                 <div className="flex items-center justify-between w-full px-2 py-2 font-semibold sm:px-0 sm:py-0 hover:text-orange focus:outline-none focus:text-orange" >
                   <div className="flex flex-col items-center justify-center cursor-pointer">
                     <div className="w-6 icon-transition"><FontAwesomeIcon icon={faPaperclip} className="text-lg" /></div>
-
                     <div className="flex flex-row items-center justify-center cursor-pointer">
                       <p className="mt-1 text-sm font-semibold hover:text-orange-600 ">Packages</p>
                     </div>
                   </div>
                 </div>
-
-
               </button>
+              
               {/* Dropdown Menu */}
               {isDropdownOpen && (
                 <ul className="absolute left-0 mt-2 w-48 bg-white border rounded-md shadow-lg" aria-label="Packages Dropdown">
@@ -81,7 +79,7 @@ const Navbar = () => {
           >
             <div className="w-6 icon-transition ">
 
-            <FontAwesomeIcon icon={faBars} className="text-2xl icon-transition" />
+              <FontAwesomeIcon icon={faBars} className="text-2xl icon-transition" />
             </div>
           </button>
         </div>
@@ -97,10 +95,10 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               aria-label="Close Mobile Menu"
             >
-<div className="w-6 icon-transition ">
+              <div className="w-6 icon-transition ">
 
-              <FontAwesomeIcon icon={faTimes} className="text-xl icon-transition " />
-</div>
+                <FontAwesomeIcon icon={faTimes} className="text-xl icon-transition " />
+              </div>
             </button>
 
             {/* Mobile Navigation */}

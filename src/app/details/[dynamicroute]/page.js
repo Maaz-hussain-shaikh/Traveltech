@@ -1,86 +1,160 @@
-
+import axios from "axios";
+import { notFound } from 'next/navigation';
 import ImageCom from "../ImageCom";
 import Information from "../Information";
 
+const API_BASE = "https://traveltechbackend.vercel.app/traveltech/api";
 
-async function fetchDestinationData(slug) {
+// Axios instance with authorization header
+const axiosInstance = axios.create({
+  baseURL: API_BASE,
+});
+
+// Fetch all card IDs for static generation
+export async function generateStaticParams() {
   try {
-    const res = await fetch(`http://localhost:3000/api/Destination?${slug}`);
-    if (!res.ok) throw new Error("Failed to fetch");
-    return await res.json();
+    const response = await axiosInstance.get('/getCards');
+    const cards = response.data;
+
+    return cards.map((card) => ({
+      dynamicroute: card.id.toString(), // Match the URL parameter
+    }));
   } catch (error) {
-    console.error("Data fetch error:", error);
-    return null;
+    console.error('Error fetching cards:', error);
+    return [];
   }
 }
 
-// मेटाडेटा जनरेट करने के लिए generateMetadata फ़ंक्शन
+// Generate dynamic metadata
 export async function generateMetadata({ params }) {
   const { dynamicroute } = await params;
   try {
-    const res = await fetch(`http://localhost:3000/api/Destination?${dynamicroute}`);
-    if (!res.ok) {
-      throw new Error(`HTTP error! Status: ${res.status}`);
-    }
-    const data = await res.json();
+    const response = await axiosInstance.get(`/Information/${dynamicroute}`);
+    const data = response.data;
 
     return {
       title: data.title,
-      description: data.brief,
+      description: data.description,
       openGraph: {
-        title: data.title,
-        description: data.brief,
-        url: `http://localhost:3000/destination/${dynamicroute}`,
-        images: [
-          {
-            url: "/images/home-bg-1.jpg",
-            alt: data.title,
-          },
-        ],
+        images: [data.imgurl_2],
       },
     };
   } catch (error) {
-    console.error("Metadata fetch error:", error);
+    console.error('Error fetching metadata:', error);
     return {
-      title: "Error",
-      description: "Unable to fetch metadata",
+      title: 'Error',
+      description: 'Unable to fetch metadata',
     };
   }
 }
 
-
-export async function generateStaticParams() {
-  return ["Panchmarhi", "Manali"].map((destination) => ({
-    dynamicroute: destination,
-  }));
-}
-
-export default async function Home({ params }) {
+// Main page component
+export default async function DetailPage({ params }) {
   const { dynamicroute } = await params;
-  const data = await fetchDestinationData(dynamicroute);
 
-  // If Data Not Found, Show Error Page
-  if (!data) {
-    return (
-      <div className="bg-gray-100 text-center py-10">
-        <p className="text-xl text-red-600">Error: This route is not found</p>
-      </div>
-    );
-  }
+  try {
+    const response = await axiosInstance.get(`/Information/${dynamicroute}`);
+    const data = response.data;
 
     return (
-      <>     
-        <div className="bg-gray-100">
-        <ImageCom src={data.imgurl} />
+      <div className="bg-gray-100">
+        <ImageCom imgurl_1={data.imgurl_1} imgurl_2={data.imgurl_2} imgurl_3={data.imgurl_3} imgurl_4={data.imgurl_4}/>
         <Information data={data} />
       </div>
-      
-      </>
-      
     );
-  } 
+  } catch (error) {
+    if (error.response?.status === 404) {
+      notFound(); // Show 404 page
+    } else {
+      console.error('Error fetching data:', error);
+      return (
+        <div className="bg-gray-100 text-center py-10">
+          <p className="text-xl text-red-600">Error: Unable to load data</p>
+        </div>
+      );
+    }
+  }
+}
+// async function fetchDestinationData(slug) {
+//   try {
+//     const res = await fetch(`http://localhost:3000/api/Destination?${slug}`);
+//     if (!res.ok) throw new Error("Failed to fetch");
+//     return await res.json();
+//   } catch (error) {
+//     console.error("Data fetch error:", error);
+//     return null;
+//   }
+// }
+
+// // मेटाडेटा जनरेट करने के लिए generateMetadata फ़ंक्शन
+// export async function generateMetadata({ params }) {
+//   const { dynamicroute } = await params;
+//   try {
+//     const res = await fetch(`http://localhost:3000/api/Destination?${dynamicroute}`);
+//     if (!res.ok) {
+//       throw new Error(`HTTP error! Status: ${res.status}`);
+//     }
+//     const data = await res.json();
+
+//     return {
+//       title: data.title,
+//       description: data.brief,
+//       openGraph: {
+//         title: data.title,
+//         description: data.brief,
+//         url: `http://localhost:3000/destination/${dynamicroute}`,
+//         images: [
+//           {
+//             url: "/images/home-bg-1.jpg",
+//             alt: data.title,
+//           },
+//         ],
+//       },
+//     };
+//   } catch (error) {
+//     console.error("Metadata fetch error:", error);
+//     return {
+//       title: "Error",
+//       description: "Unable to fetch metadata",
+//     };
+//   }
+// }
 
 
+// export async function generateStaticParams() {
+//   return ["Panchmarhi", "Manali"].map((destination) => ({
+//     dynamicroute: destination,
+//   }));
+// }
+
+// export default async function Home({ params }) {
+//   const { dynamicroute } = await params;
+//   const data = await fetchDestinationData(dynamicroute);
+
+//   // If Data Not Found, Show Error Page
+//   if (!data) {
+//     return (
+//       <div className="bg-gray-100 text-center py-10">
+//         <p className="text-xl text-red-600">Error: This route is not found</p>
+//       </div>
+//     );
+//   }
+
+//     return (
+//       <>     
+//         <div className="bg-gray-100">
+//         <ImageCom src={data.imgurl} />
+//         <Information data={data} />
+//       </div>
+      
+//       </>
+      
+//     );
+//   } 
+
+
+
+  
 
 //   "use client";
 

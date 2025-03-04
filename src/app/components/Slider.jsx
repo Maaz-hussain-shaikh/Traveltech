@@ -1,130 +1,79 @@
-"use client"; // Required for Swiper to work in Next.js
-import React, { useRef } from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
-// Import Swiper styles
+import axios from "axios";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 
-// Card Data (Replace with your actual data)
-const cardData = [
-  {
-    id: 1,
-    title: "Har Ki Dun Trek",
-    location: "Dehradun to Dehradun",
-    difficulty: "Moderate",
-    duration: "6N/7D",
-    season: "Apr - Nov",
-    price: "₹ 13,500",
-    rating: 4.5,
-    reviews: "7k",
-    image: "/images/Himachal.png",
-    link: "/treks/india/uttarakhand/har-ki-dun-trek",
-  },
-  {
-    id: 2,
-    title: "Har Ki Dun Trek",
-    location: "Dehradun to Dehradun",
-    difficulty: "Moderate",
-    duration: "6N/7D",
-    season: "Apr - Nov",
-    price: "₹ 13,500",
-    rating: 4.5,
-    reviews: "7k",
-    image: "/images/Himachal.png",
-    link: "/treks/india/uttarakhand/har-ki-dun-trek",
-  },
-  {
-    id: 3,
-    title: "Har Ki Dun Trek",
-    location: "Dehradun to Dehradun",
-    difficulty: "Moderate",
-    duration: "6N/7D",
-    season: "Apr - Nov",
-    price: "₹ 13,500",
-    rating: 4.5,
-    reviews: "7k",
-    image: "/images/Himachal.png",
-    link: "/treks/india/uttarakhand/har-ki-dun-trek",
-  },
-  {
-    id: 4,
-    title: "Har Ki Dun Trek",
-    location: "Dehradun to Dehradun",
-    difficulty: "Moderate",
-    duration: "6N/7D",
-    season: "Apr - Nov",
-    price: "₹ 13,500",
-    rating: 4.5,
-    reviews: "7k",
-    image: "/images/Himachal.png",
-    link: "/treks/india/uttarakhand/har-ki-dun-trek",
-  },
-  {
-    id: 5,
-    title: "Har Ki Dun Trek",
-    location: "Dehradun to Dehradun",
-    difficulty: "Moderate",
-    duration: "6N/7D",
-    season: "Apr - Nov",
-    price: "₹ 13,500",
-    rating: 4.5,
-    reviews: "7k",
-    image: "/images/Himachal.png",
-    link: "/treks/india/uttarakhand/har-ki-dun-trek",
-  },
-  {
-    id: 6,
-    title: "Har Ki Dun Trek",
-    location: "Dehradun to Dehradun",
-    difficulty: "Moderate",
-    duration: "6N/7D",
-    season: "Apr - Nov",
-    price: "₹ 13,500",
-    rating: 4.5,
-    reviews: "7k",
-    image: "/images/Himachal.png",
-    link: "/treks/india/uttarakhand/har-ki-dun-trek",
-  },
-  // Add more cards here
-];
+// Skeleton Loader Component
+const SkeletonCard = () => (
+  <div className="relative block overflow-hidden rounded-lg h-[350px] sm:h-[350px] lg:h-[360px] 2xl:h-[490px] animate-pulse bg-gray-200">
+    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent rounded-lg" />
+    <div className="absolute bottom-3 left-2 right-2 w-[calc(100%-1rem)]">
+      <div className="h-6 bg-gray-300 rounded-full w-3/4 mb-3" />
+      <div className="h-4 bg-gray-300 rounded-full w-1/2 mb-4" />
+      <div className="h-5 bg-gray-300 rounded-md w-full mb-2" />
+      <div className="flex gap-2">
+        <div className="h-4 bg-gray-300 rounded-full w-1/4" />
+        <div className="h-4 bg-gray-300 rounded-full w-1/4" />
+      </div>
+    </div>
+  </div>
+);
 
 const Slider = () => {
+  const API_URL = "https://traveltechbackend.vercel.app/traveltech/api/getCards?status=Inactive";
   const regions = ["South India", "West India", "North India"];
   const swiperRef = useRef(null);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(API_URL);
+        setData(response.data);
+        console.log(response.data ) // Ensure data is always an array
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
-    <>
-    <div className="flex items-center justify-between lg:py-10 lg:px-16 px-4 mt-2 ">
-                {/* Title Section */}
+    <section aria-label="Group Departures" className="lg:px-16 px-2 py-8">
+      {/* Section Header */}
+      <header className="flex items-center justify-between px-1 mt-2">
+        <div className="flex flex-col gap-1">
+          <h1 className="text-3xl font-medium capitalize lg:text-4xl">
+            Group Departures
+          </h1>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {regions.map((region) => (
+               <button
+               key={region}
+               className="border border-gray-600 text-primary text-center p-2 rounded-lg focus:outline-none hover:bg-gray-200 transition"
+               aria-label={`Select ${region}`}
+           >
+               <span className="flex items-center text-sm">{region}</span>
+           </button>
+            ))}
+          </div>
+        </div>
 
-                <div className="flex flex-col gap-[0.125rem] ">
-                    <p className="text-lg font-medium uppercase tracking-[0.375rem] text-gray-light lg:text-p-md undefined">category</p>
-
-                    <h2 className="text-3xl font-medium capitalize lg:text-h2">
-                        Group Departures
-                    </h2>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                        {regions.map((region) => (
-                            <button
-                                key={region}
-                                className="border border-gray-600 text-primary text-center p-2 rounded-lg focus:outline-none hover:bg-gray-200 transition"
-                                aria-label={`Select ${region}`}
-                            >
-                                <span className="flex items-center text-sm">{region}</span>
-                            </button>
-                        ))}
-
-
-                    </div>
-                    
-                </div>
-                <div className="flex gap-4 mt-7 justify-end">
+        {/* Navigation Controls */}
+        <div className="flex gap-4 mt-7 justify-end">
           <button
             onClick={() => swiperRef.current?.slidePrev()} // Move to the previous slide
-            className="rounded-full border border-blue-600 bg-blue-600 p-2 text-white transition-all duration-300 ease-out hover:bg-white hover:text-blue-600 lg:p-3"
+            className="rounded-full border border-orange bg-orange p-2 text-white transition-all duration-300 ease-out hover:bg-white hover:text-blue-600 lg:p-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +92,7 @@ const Slider = () => {
           </button>
           <button
             onClick={() => swiperRef.current?.slideNext()} // Move to the next slide
-            className="rounded-full border border-blue-600 bg-blue-600 p-2 text-white transition-all duration-300 ease-out hover:bg-white hover:text-blue-600 lg:p-3"
+            className="rounded-full border border-orange bg-orange p-2 text-white transition-all duration-300 ease-out hover:bg-white hover:text-blue-600 lg:p-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -161,35 +110,36 @@ const Slider = () => {
             </svg>
           </button>
         </div>
-                
-            </div>
-    <section className="lg:px-16 px-2">
-      <div className="container mx-auto ">
+      </header>
 
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={16} // Space between cards
-          slidesPerView={2} // Default for mobile
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            640: {
-              slidesPerView: 3, // 2 cards on mobile
-            },
-            1024: {
-              slidesPerView: 4, // 3 cards on desktop
-            },
-          }}
-          className="w-full"
-        >
-          {cardData.map((card) => (
-            <SwiperSlide key={card.id}>
-              <Link href={card.link}>
+      {/* Swiper Slider */}
+      <div className="container mx-auto mt-8">
+        {loading ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[...Array(4)].map((_, i) => (
+              <SkeletonCard key={i} />
+            ))}
+          </div>
+        ) : (
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={16}
+            slidesPerView={2}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            breakpoints={{
+              640: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+            }}
+            className="w-full"
+          >
+            {data?.map((card) => (
+              <SwiperSlide key={card.id}>
+              <Link href={`/details/${card.id}`}>
                 <div className="relative block overflow-hidden rounded-lg text-white h-[350px] sm:h-[350px] lg:h-[360px] 2xl:h-[490px] group">
                   {/* Image */}
                   <Image
-                    src="/images/Himachal.png"
-                    alt="Dayara Bugyal Trek"
+                    src={card.imgurl_1}
+                    alt={card.title}
                     fill
                     className="rounded-lg object-cover"
                     priority
@@ -200,16 +150,17 @@ const Slider = () => {
 
                   {/* Best Seller Badge */}
                   <div className="absolute left-0 top-3 rounded-r-lg bg-green-500 px-2 py-1 text-[10px] text-white font-semibold">
-                    Best Seller
+                    {card.tag}
                   </div>
-
                   {/* Content */}
                   <div className="absolute bottom-3 left-2 right-2 w-[calc(100%-1rem)] text-white">
                     {/* Title */}
-                    <h2 className="line-clamp-2 text-sm font-semibold leading-4">
-                      Dayara Bugyal Trek
-                    </h2>
-
+                   
+                    {card.tag && (
+                        <h2 className="line-clamp-2 text-sm font-semibold leading-4">
+                          {card.tag}
+                        </h2>
+                      )}
                     {/* Location */}
                     <div className="mt-2 inline-flex max-w-full items-center rounded-md bg-white px-1 py-[2px] text-[10px]">
                       <svg
@@ -245,7 +196,7 @@ const Slider = () => {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <p className="text-[10px]">3N/4D</p>
+                        <p className="text-[10px]">{card.duration}</p>
                       </div>
                       <div className="h-[12px] w-[1px] bg-white"></div>
                       <div className="flex items-center gap-1">
@@ -276,20 +227,18 @@ const Slider = () => {
                       <p className="text-[12px] font-medium text-white line-through">
                         ₹ 8,000
                       </p>
-                      <p className="text-[14px] font-medium text-white">₹ 7,000</p>
+                      <p className="text-[14px] font-medium text-white">₹ {card.price}</p>
                     </div>
                   </div>
                 </div>
               </Link>
             </SwiperSlide>
-          ))}
-        </Swiper>
-        
+         
+            ))}
+          </Swiper>
+        )}
       </div>
-
     </section>
-    
-    </>
   );
 };
 

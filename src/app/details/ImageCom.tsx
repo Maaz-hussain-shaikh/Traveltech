@@ -3,92 +3,104 @@
 import Image from "next/image";
 
 type ImageProps = {
-  src: { imgurl1: string ,imgurl2: string,imgurl3: string ,imgurl4: string}[];
+  imgurl_1: string 
+  imgurl_2: string
+  imgurl_3: string 
+  imgurl_4: string
 };
 
-export default function ImageCom({ src }: ImageProps) {
+
+export default function ImageCom({ imgurl_1,imgurl_2,imgurl_3,imgurl_4 }: ImageProps) {
   
 
   return (
     <>
-      <section className="max-w-screen-xl px-2 w-full mx-auto sm:h-144 sm:block hidden">
-        <section className="relative w-full h-full shadow-md z-20">
-          <div className="grid grid-cols-4 grid-rows-3 gap-1 sm:rounded-lg overflow-hidden w-full h-full">
-            <div className="w-full h-full row-span-1 col-span-1">
-              <Image
-                src={src[0].imgurl1}
-                alt="Image 1"
-                width={300}
-                height={200}
-                className="object-cover object-center w-full h-full"
-                priority
-              />
-            </div>
-            <div className="w-full h-full row-span-3 col-span-3">
-              <Image
-                src={src[0].imgurl2}
-                alt="Image 2"
-                width={900}
-                height={600}
-                className="object-cover object-center w-full h-full"
-                priority
-              />
-            </div>
-            <div className="w-full h-full row-span-1 col-span-1">
-              <Image
-                src={src[0].imgurl3}
-                alt="Image 3"
-                width={300}
-                height={200}
-                className="object-cover object-center w-full h-full"
-              />
-            </div>
-            <div className="w-full h-full row-span-1 col-span-1">
-              <Image
-                src={src[0].imgurl4}
-                alt="Image 4"
-                width={300}
-                height={200}
-                className="object-cover object-center w-full h-full"
-              />
-            </div>
-          </div>
-        </section>
-      </section>
-      <section className="max-w-screen-xl w-full mx-auto h-96 sm:h-120 sm:hidden">
-        <section className="relative w-full h-full shadow-md">
-          <div className="grid grid-cols-2 grid-rows-2 gap-1 sm:rounded-lg overflow-hidden w-full h-full">
-            <div className="w-full h-full row-span-1 col-span-2">
-              <Image
-                src={src[0].imgurl4}
-                alt="Image 1"
-                width={600}
-                height={400}
-                className="object-cover object-center w-full h-full"
-                priority
-              />
-            </div>
-            <div className="w-full h-full row-span-1 col-span-1">
-              <Image
-                src={src[0].imgurl4}
-                alt="Image 2"
-                width={300}
-                height={200}
-                className="object-cover object-center w-full h-full"
-              />
-            </div>
-            <div className="w-full h-full row-span-1 col-span-1">
-              <Image
-                src={src[0].imgurl4}
-                alt="Image 3"
-                width={300}
-                height={200}
-                className="object-cover object-center w-full h-full"
-              />
-            </div>
-          </div>
-        </section>
-      </section>
+     <section className="  p-4 w-full mx-auto">
+  {/* Desktop Layout */}
+  <div className="hidden sm:block relative w-full aspect-[2.3/1] ">
+    <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-1 ">
+      {/* Main Image (60% width) */}
+      <div className="relative row-span-3 col-span-2 h-full ">
+        <Image
+          src={`${imgurl_2}?w=1200&h=800&q=80&fit=crop`}
+          alt="Main Image"
+          fill
+          sizes="(max-width: 768px) 100vw, 60vw"
+          className="object-cover rounded-lg"
+          priority
+        />
+      </div>
+
+      {/* Side Images Grid */}
+      <div className="relative row-span-1 col-span-1">
+        <Image
+          src={`${imgurl_1}?w=600&h=400&q=80&fit=crop`}
+          alt="Image 1"
+          fill
+          sizes="(max-width: 768px) 50vw, 20vw"
+          className="object-cover rounded-lg"
+          priority
+        />
+      </div>
+
+      <div className="relative row-span-1 col-span-1">
+        <Image
+          src={`${imgurl_3}?w=600&h=400&q=80&fit=crop`}
+          alt="Image 3"
+          fill
+          sizes="(max-width: 768px) 50vw, 20vw"
+          className="object-cover rounded-xl"
+        />
+      </div>
+
+      <div className="relative row-span-1 col-span-1">
+        <Image
+          src={`${imgurl_4}?w=600&h=400&q=80&fit=crop`}
+          alt="Image 4"
+          fill
+          sizes="(max-width: 768px) 50vw, 20vw"
+          className="object-cover rounded-lg"
+        />
+      </div>
+    </div>
+  </div>
+
+  {/* Mobile Layout */}
+  <div className="sm:hidden relative w-full aspect-square">
+    <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-1">
+      <div className="relative col-span-2">
+        <Image
+          src={`${imgurl_1}?w=800&h=600&q=80&fit=crop`}
+          alt="Mobile Main"
+          fill
+          sizes="100vw"
+          className="object-cover rounded-lg"
+          priority
+        />
+      </div>
+      
+      <div className="relative">
+        <Image
+          src={`${imgurl_3}?w=400&h=300&q=80&fit=crop`}
+          alt="Mobile Thumb 1"
+          fill
+          sizes="50vw"
+          className="object-cover rounded-lg"
+        />
+      </div>
+      
+      <div className="relative">
+        <Image
+          src={`${imgurl_4}?w=400&h=300&q=80&fit=crop`}
+          alt="Mobile Thumb 2"
+          fill
+          sizes="50vw"
+          className="object-cover  rounded-lg"
+        />
+      </div>
+    </div>
+  </div>
+</section>
     </>
   );
 }

@@ -98,3 +98,7 @@ body {
 .icon-transition {
   animation: fadeInIcon 0.2s ease-in-out;
 }
+.animate-shimmer {
+  background-size: 400% 100%;
+  animation: shimmer 1.5s infinite linear;
+}

@@ -2,14 +2,12 @@
 import React, { useState } from "react";
 
 interface BookingProps {
-    Booking: {
-        key: string;
-        description: string;
-    }[]
     Faq: {
         question: string;
         answer: string;
     }[]
+    Booking:{ Heading: string; Terms: string; }[]
+   
 
 }
 
@@ -27,7 +25,6 @@ const Faq: React.FC<BookingProps>= ({Booking,Faq}) => {
                     <span className="font-medium  text-sm">Please read them once</span>
                     <hr className="border-gray-300" />
 
-                    
 
                     <div className={`flex flex-wrap gap-3 lg:gap-5 rounded-xl `} >
                     {Booking.map((item,index)=>(<React.Fragment key={index}>
@@ -38,12 +35,12 @@ const Faq: React.FC<BookingProps>= ({Booking,Faq}) => {
                             {/* Itinerary Details */}
                             <div className="grow p-4" onClick={() => toggleid(index)}>
                                 <h3 className="cursor-pointer text-sm font-medium lg:text-lg">
-                                {item.key}
+                                {item.Heading}
                                 </h3>
 
                                 {isOpen === index &&  (
                                     
-                                    <div className="itinerary-description mt-[0.375rem] text-sm text-gray-500 lg:mt-2 lg:text-base ml-4" dangerouslySetInnerHTML={{ __html: item.description }}/>
+                                    <div className="itinerary-description mt-[0.375rem] text-sm text-gray-500 lg:mt-2 lg:text-base ml-4" dangerouslySetInnerHTML={{ __html: item.Terms }}/>
                                    
                                 )}
                             </div>
